@@ -4,7 +4,7 @@ if(empty($_POST['heading']){
 	$_POST['heading']=htmlspecialchars($_POST['heading'], ENT_QUOTES);
 }
 if(empty($_POST['subheading'])){
-	$_POST['subheading']=htmlspecialchars($_POST['heading'], ENT_QUOTES);
+	$_POST['subheading']=htmlspecialchars($_POST['subheading'], ENT_QUOTES);
 }
 if(!empty($_POST["delete_id"])){
 	$sql = "delete from content where id='".$_POST['delete_id']."';";
