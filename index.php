@@ -316,7 +316,7 @@
                                     <!-- Project Details Go Here-->
                                     <h2 class="text-uppercase"><?php echo $row['heading']; ?></h2>
                                     <p class="item-intro text-muted"><?php echo $row['subheading']; ?></p>
-                                    <img class="img-fluid d-block mx-auto" src="uploads/<?php $row['url_pic']; ?>" alt="" />
+                                    <img class="img-fluid d-block mx-auto" src="uploads/<?php echo $row['url_pic']; ?>" alt="" />
                                     <ul class="list-inline">
                                         <li>Size: <?php echo $row['size']; ?></li>
                                         <li>Color: <?php echo $row['color']; ?></li>
