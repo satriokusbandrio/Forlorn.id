@@ -96,7 +96,7 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="login.html">
+                            <a href="https://forlorn-id.herokuapp.com/">
                                 <p>Log out</p>
                             </a>
                         </li>
