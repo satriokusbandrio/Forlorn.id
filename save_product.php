@@ -1,9 +1,9 @@
 <?php include("connect.php") ?>
 <?php
-if(empty($_POST['heading']){
+if(!empty($_POST['heading'])){
 	$_POST['heading']=htmlspecialchars($_POST['heading'], ENT_QUOTES);
 }
-if(empty($_POST['subheading'])){
+if(!empty($_POST['subheading'])){
 	$_POST['subheading']=htmlspecialchars($_POST['subheading'], ENT_QUOTES);
 }
 if(!empty($_POST["delete_id"])){
