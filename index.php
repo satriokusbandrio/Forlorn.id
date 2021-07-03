@@ -33,7 +33,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#history">History</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://login-adminforlorn.herokuapp.com/">Login</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="login.php">Login</a></li>
                         <span class="ikon" onclick="setDark(true)"><img src="assets/img/moon.png" width="15px" height="15px"></span>
                         <span class="ikon1" onclick="setDark(false)"><img src="assets/img/sun.png" width="15px" height="15px"></span>
                     </ul>
