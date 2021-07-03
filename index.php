@@ -115,7 +115,7 @@
 									while ($row = $result->fetch_assoc()) { ?>
 					<div class="col-lg-4 col-sm-6 mb-4">
                         <div class="products-item">
-                            <a class="products-link" data-toggle="modal" href="#productsModal2">
+                            <a class="products-link" data-toggle="modal" href="#productsModal<?php echo $row['id'];?>">
                                 <div class="products-hover">
                                     <div class="products-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -303,7 +303,9 @@
         </footer>
         <!-- Product Modals-->
         <!-- Modal 1-->
-        <div class="products-modal modal fade" id="productsModal1" tabindex="-1" role="dialog" aria-hidden="true">
+		<?php $result = mysqli_query($mysqli, "select * from content"); 
+			while ($row = $result->fetch_assoc()) { ?>
+        <div class="products-modal modal fade" id="productsModal<?php echo $row['id'] ?>" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -312,13 +314,13 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project Details Go Here-->
-                                    <h2 class="text-uppercase">Article (001)</h2>
-                                    <p class="item-intro text-muted">I've lost my mind.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/product/artikel1dpn (1).jpg" alt="" />
+                                    <h2 class="text-uppercase"><?php $row['heading']; ?></h2>
+                                    <p class="item-intro text-muted"><?php $row['subheading']; ?></p>
+                                    <img class="img-fluid d-block mx-auto" src="uploads/<?php $row['url_pic']; ?>" alt="" />
                                     <ul class="list-inline">
-                                        <li>Size: Ready All Size</li>
-                                        <li>Color: Black</li>
-                                        <li>Price: Rp149.000</li>
+                                        <li>Size: <?php $row['size']; ?></li>
+                                        <li>Color: <?php $row['color']; ?></li>
+                                        <li>Price: <?php $row['price']; ?></li>
                                     </ul>
                                     <button class="btn btn-primary" data-dismiss="modal" type="button">
                                         <i class="fas fa-times mr-1"></i>
@@ -331,148 +333,7 @@
                 </div>
             </div>
         </div>
-        <!-- Modal 2-->
-        <div class="products-modal modal fade" id="productsModal2" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project Details Go Here-->
-                                    <h2 class="text-uppercase">Article (001)</h2>
-                                    <p class="item-intro text-muted">I've lost my mind.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/product/1tengah (1).jpg" alt="" />
-                                    <ul class="list-inline">
-                                        <li>Size: Ready All Size</li>
-                                        <li>Color: Black</li>
-                                        <li>Price: Rp149.000</li>
-                                    </ul>
-                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                        <i class="fas fa-times mr-1"></i>
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal 3-->
-        <div class="products-modal modal fade" id="productsModal3" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project Details Go Here-->
-                                    <h2 class="text-uppercase">Article (001)</h2>
-                                    <p class="item-intro text-muted">I've lost my mind.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/product/artikel1bkg (1).jpg" alt="" />
-                                    <ul class="list-inline">
-                                        <li>Size: Ready All Size</li>
-                                        <li>Color: Black</li>
-                                        <li>Price: Rp149.000</li>
-                                    </ul>
-                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                        <i class="fas fa-times mr-1"></i>
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal 4-->
-        <div class="products-modal modal fade" id="productsModal4" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project Details Go Here-->
-                                    <h2 class="text-uppercase">Article (002)</h2>
-                                    <p class="item-intro text-muted">Love to you.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/product/artikel2dpn (1).jpg" alt="" />
-                                    <li>Size: Ready All Size</li>
-                                    <li>Color: White</li>
-                                    <li>Price: Rp149.000</li>
-                                </ul>
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="fas fa-times mr-1"></i>
-                                    Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal 5-->
-        <div class="products-modal modal fade" id="productsModal5" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project Details Go Here-->
-                                    <h2 class="text-uppercase">Article (002)</h2>
-                                    <p class="item-intro text-muted">Love to you.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/product/2tengah (1).jpg" alt="" />
-                                    <li>Size: Ready All Size</li>
-                                    <li>Color: White</li>
-                                    <li>Price: Rp149.000</li>
-                                </ul>
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="fas fa-times mr-1"></i>
-                                    Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal 6-->
-        <div class="products-modal modal fade" id="productsModal6" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project Details Go Here-->
-                                    <h2 class="text-uppercase">Article (002)</h2>
-                                    <p class="item-intro text-muted">Love to you.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/product/artikel2bkg (1).jpg" alt="" />
-                                    <li>Size: Ready All Size</li>
-                                    <li>Color: White</li>
-                                    <li>Price: Rp149.000</li>
-                                </ul>
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="fas fa-times mr-1"></i>
-                                    Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+			<?php } ?>
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
