@@ -34,7 +34,7 @@ if(empty($_POST["id"])){
 	}
 
 	// Check file size
-	if ($_FILES["pic"]["size"] > 500000) {
+	if ($_FILES["pic"]["size"] > 50000000) {
 	  echo "Sorry, your file is too large.";
 	  $uploadOk = 0;
 	}
@@ -65,7 +65,8 @@ if(empty($_POST["id"])){
 		echo "Sorry, there was an error uploading your file.";
 	  }
 	}
-}else{
+}
+else{
 	$target_dir = "uploads/";
 	$target_file = $target_dir . basename($_FILES["pic"]["name"]);
 	$uploadOk = 1;
