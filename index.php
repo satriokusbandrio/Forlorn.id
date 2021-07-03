@@ -314,13 +314,13 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project Details Go Here-->
-                                    <h2 class="text-uppercase"><?php $row['heading']; ?></h2>
-                                    <p class="item-intro text-muted"><?php $row['subheading']; ?></p>
+                                    <h2 class="text-uppercase"><?php echo $row['heading']; ?></h2>
+                                    <p class="item-intro text-muted"><?php echo $row['subheading']; ?></p>
                                     <img class="img-fluid d-block mx-auto" src="uploads/<?php $row['url_pic']; ?>" alt="" />
                                     <ul class="list-inline">
-                                        <li>Size: <?php $row['size']; ?></li>
-                                        <li>Color: <?php $row['color']; ?></li>
-                                        <li>Price: <?php $row['price']; ?></li>
+                                        <li>Size: <?php echo $row['size']; ?></li>
+                                        <li>Color: <?php echo $row['color']; ?></li>
+                                        <li>Price: <?php echo $row['price']; ?></li>
                                     </ul>
                                     <button class="btn btn-primary" data-dismiss="modal" type="button">
                                         <i class="fas fa-times mr-1"></i>

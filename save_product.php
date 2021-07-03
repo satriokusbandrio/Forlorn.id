@@ -59,7 +59,7 @@ if(empty($_POST["id"])){
 	} else {
 	  if (move_uploaded_file($_FILES["pic"]["tmp_name"], $target_file)) {
 		echo "The file ". htmlspecialchars( basename( $_FILES["pic"]["name"])). " has been uploaded.";
-		$sql = "INSERT INTO content (heading, subheading, color,price,url_pic) VALUES ('".$_POST['heading']."', '".$_POST['subheading']."', '".$_POST['color']."','".$_POST['price']."','".$_FILES["pic"]["name"]."');";
+		$sql = "INSERT INTO content (heading, subheading, color,price,size,url_pic) VALUES ('".$_POST['heading']."', '".$_POST['subheading']."', '".$_POST['color']."','".$_POST['price']."','".$_POST['size']."','".$_FILES["pic"]["name"]."');";
 		if ($mysqli->query($sql) === TRUE) {
 			echo "New record created successfully";
 			echo "<script>window.location.href='table.php';</script>";
@@ -87,7 +87,7 @@ else{
 	} else {
 	  if (move_uploaded_file($_FILES["pic"]["tmp_name"], $target_file)) {
 		echo "The file ". htmlspecialchars( basename( $_FILES["pic"]["name"])). " has been uploaded.";
-		$sql = "UPDATE content set heading='".$_POST['heading']."', subheading='".$_POST['subheading']."', color='".$_POST['color']."',price='".$_POST['price']."', url_pic='".$_FILES["pic"]["name"]."' where id='".$_POST['id']."';";
+		$sql = "UPDATE content set heading='".$_POST['heading']."', subheading='".$_POST['subheading']."', color='".$_POST['color']."',price='".$_POST['price']."',size='".$_POST['size']."', url_pic='".$_FILES["pic"]["name"]."' where id='".$_POST['id']."';";
 		if ($mysqli->query($sql) === TRUE) {
 			echo "New record created successfully";
 			echo "<script>window.location.href='table.php';</script>";
@@ -97,7 +97,7 @@ else{
 		
 	  } else {
 		echo "Sorry, there was an error uploading your file.";
-		$sql = "UPDATE content set heading='".$_POST['heading']."', subheading='".$_POST['subheading']."', color='".$_POST['color']."',price='".$_POST['price']."' where id='".$_POST['id']."';";
+		$sql = "UPDATE content set heading='".$_POST['heading']."', subheading='".$_POST['subheading']."', color='".$_POST['color']."',price='".$_POST['price']."',size='".$_POST['size']."' where id='".$_POST['id']."';";
 		if ($mysqli->query($sql) === TRUE) {
 			echo "New record created successfully";
 			echo "<script>window.location.href='table.php';</script>";
